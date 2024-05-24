@@ -11,7 +11,7 @@ function LogInComp() {
         You are not logged in!
       </h1>
       <p className="text-center mt-3">
-        You must be logged in or you won"t be able to use this app. And it"s my
+        You must be logged in or you wont be able to use this app. And its my
         order!
       </p>
       <div className="mt-5 w-full">
