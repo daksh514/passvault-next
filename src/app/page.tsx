@@ -22,8 +22,9 @@ export default async function Home() {
 
       {Object.entries(passwords).map((pass) => {
         const password = pass[1]
+        const passInsStr = JSON.stringify(password)
         return (
-          <PasswordCard password={password} key={password._id}/>
+          <PasswordCard passwordInStr={passInsStr} key={password._id}/>
           )
       })}
       </div>

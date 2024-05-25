@@ -11,15 +11,17 @@ function NewPassword({
   session,
 }: {
   newPassOpen: Dispatch<SetStateAction<boolean>>;
-  session: Session;
+  session: string;
 }) {
+
+  const sessionData = JSON.parse(session);
   const [passTitle, setPassTitle] = useState("");
   const [passValue, setPassValue] = useState("");
   async function formSubmitHandler() {
     const passData = new FormData();
     passData.append("passTitle", passTitle);
     passData.append("passValue", passValue);
-    passData.append("userEmail", session?.user?.email || "");
+    passData.append("userEmail", sessionData?.user?.email || "");
     const res = await savePassword(passData);
     // console.log(res);
     await getPasswords();

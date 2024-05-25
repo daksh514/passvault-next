@@ -9,11 +9,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import CardMenu from "./CardMenu";
 
-function PasswordCard({ password }: { password: any }) {
+function PasswordCard({ passwordInStr }: { passwordInStr: string }) {
   const [isViewing, setIsViewing] = useState(false);
   const [cardMenuOpen, setCardMenuOpen] = useState(false);
+  const password = JSON.parse(passwordInStr);
 
-  
   return (
     <div key={password._id}>
       <div className="bg-gray-200 mb-2 flex flex-col gap-2 shadow-md rounded-md p-5">
@@ -27,9 +27,7 @@ function PasswordCard({ password }: { password: any }) {
           >
             <FontAwesomeIcon icon={faEllipsisVertical} />
           </button>
-          {cardMenuOpen && (
-            <CardMenu password={JSON.stringify(password)}/>
-          )}
+          {cardMenuOpen && <CardMenu password={JSON.stringify(password)} />}
         </div>
         <div className="mt-2 bg-gray-50 rounded-md flex items-center justify-between py-2 px-4">
           <h1 className="text-md">

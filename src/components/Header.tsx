@@ -56,7 +56,7 @@ function Header({ session }: { session: Session }) {
           <div>
 
         <div className="bg-black/40 absolute top-0 left-0 w-screen h-screen backdrop-filter" onClick={()=>setNewPassOpen(false)}></div>
-      <NewPassword newPassOpen={setNewPassOpen} session={session}/>
+      <NewPassword newPassOpen={setNewPassOpen} session={JSON.stringify(session)}/>
       </div> 
       )
       }
